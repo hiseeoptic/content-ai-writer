@@ -1,0 +1,23 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "vite",
+  "buildCommand": "npm run vercel-build",
+  "outputDirectory": "dist",
+  "functions": {
+    "api/text.ts": {
+      "memory": 1024,
+      "maxDuration": 300
+    },
+    "api/image.ts": {
+      "memory": 1024,
+      "maxDuration": 300
+    },
+    "api/history.ts": {
+      "memory": 256,
+      "maxDuration": 30
+    }
+  },
+  "rewrites": [
+    { "source": "/api/:path*", "destination": "/api/:path*" }
+  ]
+}
